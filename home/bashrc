@@ -2,6 +2,4 @@ for file in ~/.{bash_prompt, bash_aliases, bash_exports}; do
   [[ -f "$file" ]] && source "$file";
 done
 
-if [ -f ~/.localrc ]; then
-  . ~/.localrc
-fi
+[[ -f "~/.localrc" ]] && source "~/.localrc";
