@@ -13,7 +13,6 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'ntpeters/vim-better-whitespace'
 
 " All of your Plugins must be added before the following line
