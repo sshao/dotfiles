@@ -1,9 +1,12 @@
+[user]
+  name = sshao
+  email = sshao@users.noreply.github.com
 [alias]
   br = branch
   co = checkout
   st = status
-[user]
-  email = sshao@users.noreply.github.com
-  name = sshao
 [color]
   ui = true
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
