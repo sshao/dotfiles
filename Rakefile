@@ -30,11 +30,11 @@ task :install do
       end
 
       if all_opts[:backup] or file_opts[:backup]
-        FileUtils.mv(dest_filepath, "#{dest_filepath}.backup", :verbose => true)
+        FileUtils.mv(dest_filepath, "#{dest_filepath}.backup", verbose: true)
       end
     end
 
-    FileUtils.cp(repo_filepath, dest_filepath, :verbose => true)
+    FileUtils.cp(repo_filepath, dest_filepath, verbose: true)
   end
 
   # TODO: vimrc, tmux.conf, etc
