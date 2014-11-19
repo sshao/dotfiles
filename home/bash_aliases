@@ -1,6 +1,7 @@
 alias be="bundle exec "
 alias reload="source ~/.bashrc"
 alias treload="tmux source-file ~/.tmux.conf"
+alias vunstall="vim +PluginInstall +qall"
 
 # rubinius
 alias rbxjit="ruby -Xjit.sync -Xjit.show -Xjit.debug -Xjit.inline.debug "
