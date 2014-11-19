@@ -24,6 +24,8 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 autocmd FileType gitcommit DiffGitCached | wincmd = | wincmd p
 
 syntax enable
+set background=dark
+colorscheme solarized
 
 set backspace=indent,eol,start
 
@@ -42,6 +44,8 @@ set ruler
 
 set hlsearch
 
+set laststatus=2
+set encoding=utf-8
 set t_Co=256
 
 " disable arrow keys in command modes
@@ -55,3 +59,8 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+" powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
