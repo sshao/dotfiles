@@ -43,3 +43,15 @@ set ruler
 set hlsearch
 
 set t_Co=256
+
+" disable arrow keys in command modes
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" disable arrow keys in insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
