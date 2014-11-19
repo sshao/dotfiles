@@ -38,9 +38,9 @@ prompt_git() {
       git rev-parse --short HEAD 2> /dev/null || \
       echo '(unknown)')";
 
-    [ -n "${s}" ] && s=" [${s}]";
+    [ -n "${s}" ] && s=" ${s}";
 
-    echo -e "${1}${branchName}${white}${s}";
+    printf "%s" "$1$branchName$s"
   else
     return;
   fi;
@@ -59,10 +59,9 @@ white="\033[37m";
 yellow="\033[33m";
 
 # Set the terminal title to the current working directory.
-PS1="\[\033]0;\w\007\]";
-PS1+="\[${yellow}\]\h"; # host
+PS1="\[${yellow}\]\h"; # host
 PS1+=" ";
 PS1+="\[${reset}\]\w"; # working directory
-PS1+="\$(prompt_git \"\[${white}\] \[${red}\")"; # Git repository details
+PS1+="\$(prompt_git \" \[$red\]\")"; # Git repository details
 PS1+="\[${white}\] \[${reset}\]"; # `$` (and reset color)
 export PS1;
