@@ -14,7 +14,12 @@ task :install do
 
     if File.exists?(dest_filepath) || File.symlink?(dest_filepath)
       unless all_opts.any? { |_, v| v == true }
-        puts "File already exists: #{dest_filepath}"
+        print "File already exists: #{dest_filepath}, "
+        if FileUtils.compare_file(repo_filepath, dest_filepath)
+          puts "but does not differ"
+        else
+          puts "and differs"
+        end
         puts "What do you want to do? [o]verwrite, [O]verwrite all remaining, [b]ackup, [B]ackup all remaining, [s]kip, [S]kip all remaining"
 
         case STDIN.gets.chomp
@@ -26,6 +31,7 @@ task :install do
         when 'S' then break
         else
           puts "not a valid selection. skipping"
+          next
         end
       end
 
