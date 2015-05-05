@@ -5,8 +5,13 @@
   br = branch
   co = checkout
   st = status
+  df = diff
+  gf = log --oneline --graph --all --decorate --abbrev-commit
+  cloen = clone
 [color]
   ui = true
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+[rerere]
+  enabled = true
