@@ -6,3 +6,5 @@ alias vunstall="vim +PluginInstall +qall"
 # rubinius
 alias rbxjit="ruby -Xjit.sync -Xjit.show -Xjit.debug -Xjit.inline.debug "
 alias rebuild="rake -q build"
+
+alias grep="grep --color "
