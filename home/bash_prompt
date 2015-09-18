@@ -1,4 +1,3 @@
-# https://gist.github.com/wolever/6525437
 # prompt examples:
 #   [3 jobs master virtualenv] ~/code/myproject/foo
 #   [1 job my-branch virtualenv] ~/code/bar/
@@ -8,7 +7,7 @@
 
 if [[ "$USER" == "root" ]]
 then
-    export PS1="\e[1;31m\]\u \[\e[1;33m\]\w\[\e[0m\] ";
+    export PS1="\[\e[1;31m\]\u\[\e[0m\] \[\e[1;33m\]\w\[\e[0m\] ";
 else
     export PS1="\[\e[1;33m\]\w\[\e[0m\] ";
 fi
@@ -65,12 +64,19 @@ PS1_reset='\[\e[0m\]'
 _mk_prompt() {
     # Change the window title of X terminals 
     case $TERM in
-        xterm*|rxvt*|Eterm)
-            echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"
-           ;;
-        screen)
-            echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"
+      xterm*|rxvt*|Eterm)
+      local tilde="~"
+      if [ $USER == "root" ];
+    then
+      echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/$tilde}\007"
+      else
+
+        echo -ne "\033]0;${HOSTNAME%%.*}:${PWD/$HOME/$tilde}\007"
+          fi
           ;;
+    screen)
+      echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/$tilde}\033\\"
+      ;;
     esac
 
     # Un-screw virtualenv stuff
