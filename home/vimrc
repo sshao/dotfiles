@@ -15,6 +15,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ntpeters/vim-better-whitespace'
 
+Bundle 'altercation/vim-colors-solarized'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -61,6 +63,4 @@ imap <left> <nop>
 imap <right> <nop>
 
 " powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
