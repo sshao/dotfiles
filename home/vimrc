@@ -10,11 +10,8 @@ call vundle#begin("~/.vim/bundle/")
 Plugin 'gmarik/Vundle.vim'
 
 Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
 Bundle 'ntpeters/vim-better-whitespace'
-
 Bundle 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
@@ -61,6 +58,3 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-
-" powerline
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
